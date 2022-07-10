@@ -14,15 +14,10 @@
  *    limitations under the License.
  */
 
-public class Launcher {
-    public static void main(String[] args) {
-        Game game = new Game(new Dataprinter(),
-                new ComputerMove(),
-                new PlayerMove(),
-                new WinnerVerifier(),
-                new DrowVerifier()
-        );
-        game.play();
+public class Dataprinter {
+    public void printTableGame(GameTable gameTable) {
     }
 
+    public void printTableMapping() {
+    }
 }
