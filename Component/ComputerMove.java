@@ -14,6 +14,10 @@
  *    limitations under the License.
  */
 
+package Component;
+
+import Model.GameTable;
+
 public class ComputerMove {
     public void make(GameTable gameTable) {
     }

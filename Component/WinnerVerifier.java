@@ -14,8 +14,16 @@
  *    limitations under the License.
  */
 
-public class DrowVerifier {
-    public boolean isDrow(GameTable gameTable) {
+package Component;
+
+import Model.GameTable;
+
+public class WinnerVerifier {
+    public boolean isComputerWin(GameTable gameTable) {
+        return false;
+    }
+
+    public boolean isUserWin(GameTable gameTable) {
         return false;
     }
 }

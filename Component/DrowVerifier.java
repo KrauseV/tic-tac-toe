@@ -14,5 +14,12 @@
  *    limitations under the License.
  */
 
-public class GameTable {
+package Component;
+
+import Model.GameTable;
+
+public class DrowVerifier {
+    public boolean isDrow(GameTable gameTable) {
+        return false;
+    }
 }

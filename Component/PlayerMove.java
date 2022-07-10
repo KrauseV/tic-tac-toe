@@ -14,10 +14,11 @@
  *    limitations under the License.
  */
 
-public class Dataprinter {
-    public void printTableGame(GameTable gameTable) {
-    }
+package Component;
 
-    public void printTableMapping() {
+import Model.GameTable;
+
+public class PlayerMove {
+    public void make(GameTable gameTable) {
     }
 }

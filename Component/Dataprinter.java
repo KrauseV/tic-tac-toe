@@ -14,7 +14,14 @@
  *    limitations under the License.
  */
 
-public class PlayerMove {
-    public void make(GameTable gameTable) {
+package Component;
+
+import Model.GameTable;
+
+public class Dataprinter {
+    public void printTableGame(GameTable gameTable) {
+    }
+
+    public void printTableMapping() {
     }
 }

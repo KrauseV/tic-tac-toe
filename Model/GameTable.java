@@ -14,12 +14,7 @@
  *    limitations under the License.
  */
 
-public class WinnerVerifier {
-    public boolean isComputerWin(GameTable gameTable) {
-        return false;
-    }
+package Model;
 
-    public boolean isUserWin(GameTable gameTable) {
-        return false;
-    }
+public class GameTable {
 }

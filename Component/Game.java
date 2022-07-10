@@ -14,6 +14,10 @@
  *    limitations under the License.
  */
 
+package Component;
+
+import Model.GameTable;
+
 import java.util.Random;
 
 public class Game {
