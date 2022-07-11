@@ -20,9 +20,9 @@ import java.util.Arrays;
 
 public class GameTable {
     private final char[][] table = {
-            {' ', ' ', ' '},
-            {' ', ' ', ' '},
-            {' ', ' ', ' '}
+            {'0', '8', '9'},
+            {'4', '0', '6'},
+            {'1', '2', '0'}
     };
 
     public boolean isEmpty(final Cell cell) {
