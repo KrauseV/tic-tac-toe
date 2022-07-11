@@ -21,7 +21,7 @@ import java.util.Arrays;
 public class GameTable {
     private final char[][] table = {
             {' ', ' ', ' '},
-            {'4', ' ', '1'},
+            {' ', ' ', ' '},
             {' ', ' ', ' '}
     };
 

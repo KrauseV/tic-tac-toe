@@ -16,14 +16,33 @@
 
 package Component;
 
+import Model.Cell;
 import Model.GameTable;
 
 public class WinnerVerifier {
     public boolean isComputerWin(GameTable gameTable) {
-        return false;
+        return winner('O', gameTable);
     }
 
     public boolean isUserWin(GameTable gameTable) {
-        return false;
+        return winner('X', gameTable);
+    }
+
+    private boolean winner(char x, GameTable gameTable) {
+
+        for (int i = 0; i < 3; i++) {
+            if (x == gameTable.getSign(new Cell(0, i)) &&
+                    x == gameTable.getSign(new Cell(1, i)) &&
+                    x == gameTable.getSign(new Cell(2, i))) return true;
+            if (x == gameTable.getSign(new Cell(i, 0)) &&
+                    x == gameTable.getSign(new Cell(i, 1)) &&
+                    x == gameTable.getSign(new Cell(i, 2))) return true;
+        }
+        if (x == gameTable.getSign(new Cell(0, 0)) &&
+                x == gameTable.getSign(new Cell(1, 1)) &&
+                x == gameTable.getSign(new Cell(2, 2))) return true;
+        else return x == gameTable.getSign(new Cell(0, 2)) &&
+                x == gameTable.getSign(new Cell(1, 1)) &&
+                x == gameTable.getSign(new Cell(2, 0));
     }
 }
