@@ -14,18 +14,29 @@
  *    limitations under the License.
  */
 
-import Component.*;
+package Component;
 
-public class Launcher {
-    public static void main(String[] args) {
-        CellNumberConvert cellNumberConvert = new CellNumberConvert();
-        Game game = new Game(new Dataprinter(cellNumberConvert),
-                new ComputerMove(),
-                new PlayerMove(cellNumberConvert),
-                new WinnerVerifier(),
-                new CellVerifier()
-        );
-        game.play();
+import Model.Cell;
+
+public class CellNumberConvert {
+
+    char[][] mapping1 = {
+            {'7', '8', '9'},
+            {'4', '5', '6'},
+            {'1', '2', '3'}
+    };
+
+
+    public Cell getCell(char step) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (step == mapping1[i][j]) return new Cell(i, j);
+            }
+        }
+        return null;
     }
 
+    public char getNumber(Cell cell) {
+        return mapping1[cell.getRow()][cell.getCol()];
+    }
 }

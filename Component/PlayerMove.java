@@ -22,11 +22,11 @@ import Model.GameTable;
 import java.util.Scanner;
 
 public class PlayerMove {
-    int[][] gameMaket = new int[][]{
-            {7, 8, 9},
-            {4, 5, 6},
-            {1, 2, 3}
-    };
+    CellNumberConvert cellNumberConvert;
+
+    public PlayerMove(CellNumberConvert cellNumberConvert) {
+        this.cellNumberConvert = cellNumberConvert;
+    }
 
     public void make(GameTable gameTable) {
 
@@ -45,19 +45,13 @@ public class PlayerMove {
         String step = new Scanner(System.in).nextLine();
         while (true) {
             if (step.length() == 1) {
-                int userStep = Integer.parseInt(step);
-                if (userStep != 0) {
-                    for (int i = 0; i < gameMaket.length; i++) {
-                        for (int j = 0; j < gameMaket[i].length; j++) {
-                            if (userStep == gameMaket[i][j]) {
-                                return new Cell(i, j);
-                            }
-                        }
-
-                    }
+                if (step.charAt(0) != '0') {
+                    return cellNumberConvert.getCell(step.charAt(0));
                 } else System.out.println("Введите число от 1 до 9");
             } else System.out.println("Введите число от 1 до 9");
+
         }
+
     }
 
 

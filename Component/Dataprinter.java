@@ -20,6 +20,7 @@ import Model.Cell;
 import Model.GameTable;
 
 public class Dataprinter {
+    CellNumberConvert cellNumberConvert;
     public void printTableGame(GameTable gameTable) {
 
         for (int i = 0; i < 3; i++) {
@@ -32,14 +33,18 @@ public class Dataprinter {
         System.out.println("-------------");
     }
 
+    public Dataprinter(CellNumberConvert cellNumberConvert) {
+        this.cellNumberConvert = cellNumberConvert;
+    }
+
     public void printTableMapping() {
-        System.out.println("""
-                -------------
-                | 7 | 8 | 9 |
-                -------------
-                | 4 | 5 | 6 |
-                -------------
-                | 1 | 2 | 3 |
-                -------------""");
+        for (int i = 0; i < 3; i++) {
+            System.out.println("-------------");
+            for (int j = 0; j < 3; j++) {
+                System.out.print("| " + cellNumberConvert.getNumber(new Cell(i, j)) + " ");
+            }
+            System.out.println("|");
+        }
+        System.out.println("-------------");
     }
 }
