@@ -19,8 +19,9 @@ package Component;
 import Model.Cell;
 import Model.GameTable;
 
-public class Dataprinter {
+public class DataPrinter {
     CellNumberConvert cellNumberConvert;
+
     public void printTableGame(GameTable gameTable) {
 
         for (int i = 0; i < 3; i++) {
@@ -33,7 +34,7 @@ public class Dataprinter {
         System.out.println("-------------");
     }
 
-    public Dataprinter(CellNumberConvert cellNumberConvert) {
+    public DataPrinter(CellNumberConvert cellNumberConvert) {
         this.cellNumberConvert = cellNumberConvert;
     }
 

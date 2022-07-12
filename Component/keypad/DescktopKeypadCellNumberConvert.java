@@ -14,19 +14,30 @@
  *    limitations under the License.
  */
 
-import Component.*;
-import Component.keypad.DescktopKeypadCellNumberConvert;
+package Component.keypad;
 
-public class Launcher {
-    public static void main(String[] args) {
-        final CellNumberConvert cellNumberConvert = new DescktopKeypadCellNumberConvert();
-        Game game = new Game(new DataPrinter(cellNumberConvert),
-                new ComputerMove(),
-                new PlayerMove(cellNumberConvert),
-                new WinnerVerifier(),
-                new CellVerifier()
-        );
-        game.play();
+import Component.CellNumberConvert;
+import Model.Cell;
+
+public class DescktopKeypadCellNumberConvert implements CellNumberConvert {
+
+    char[][] mapping1 = {
+            {'7', '8', '9'},
+            {'4', '5', '6'},
+            {'1', '2', '3'}
+    };
+
+
+    public Cell getCell(char step) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (step == mapping1[i][j]) return new Cell(i, j);
+            }
+        }
+        return null;
     }
 
+    public char getNumber(Cell cell) {
+        return mapping1[cell.getRow()][cell.getCol()];
+    }
 }

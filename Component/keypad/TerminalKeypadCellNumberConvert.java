@@ -14,13 +14,30 @@
  *    limitations under the License.
  */
 
-package Component;
+package Component.keypad;
 
+import Component.CellNumberConvert;
 import Model.Cell;
 
-public interface CellNumberConvert {
+public class TerminalKeypadCellNumberConvert implements CellNumberConvert {
+    char[][] mapping1 = {
+            {'1', '2', '3'},
+            {'4', '5', '6'},
+            {'7', '8', '9'}
+    };
 
-    Cell getCell(char step);
+    @Override
+    public Cell getCell(char step) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (step == mapping1[i][j]) return new Cell(i, j);
+            }
+        }
+        return null;
+    }
 
-    char getNumber(Cell cell);
+    @Override
+    public char getNumber(Cell cell) {
+        return mapping1[cell.getRow()][cell.getCol()];
+    }
 }

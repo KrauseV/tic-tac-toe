@@ -22,7 +22,7 @@ import Model.GameTable;
 import java.util.Scanner;
 
 public class PlayerMove {
-    CellNumberConvert cellNumberConvert;
+  CellNumberConvert cellNumberConvert;
 
     public PlayerMove(CellNumberConvert cellNumberConvert) {
         this.cellNumberConvert = cellNumberConvert;

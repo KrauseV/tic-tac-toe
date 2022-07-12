@@ -21,13 +21,13 @@ import Model.GameTable;
 import java.util.Random;
 
 public class Game {
-    private final Dataprinter dataprinter;
+    private final DataPrinter dataprinter;
     private final ComputerMove computerMove;
     private final PlayerMove playerMove;
     private final WinnerVerifier winnerVerifier;
     private final CellVerifier cellVerifier;
 
-    public Game(Dataprinter dataprinter,
+    public Game(DataPrinter dataprinter,
                 ComputerMove computerMove,
                 PlayerMove playerMove,
                 WinnerVerifier winnerVerifier,
