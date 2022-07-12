@@ -25,18 +25,18 @@ public class Game {
     private final ComputerMove computerMove;
     private final PlayerMove playerMove;
     private final WinnerVerifier winnerVerifier;
-    private final DrowVerifier drowVerifier;
+    private final CellVerifier cellVerifier;
 
     public Game(Dataprinter dataprinter,
                 ComputerMove computerMove,
                 PlayerMove playerMove,
                 WinnerVerifier winnerVerifier,
-                DrowVerifier drowVerifier) {
+                CellVerifier drowVerifier) {
         this.dataprinter = dataprinter;
         this.computerMove = computerMove;
         this.playerMove = playerMove;
         this.winnerVerifier = winnerVerifier;
-        this.drowVerifier = drowVerifier;
+        this.cellVerifier = drowVerifier;
     }
 
     public void play() {
@@ -54,7 +54,7 @@ public class Game {
                 System.out.println("Вы победили!");
                 break;
             }
-            if (drowVerifier.isDrow(gameTable)) {
+            if (cellVerifier.CellsFilled(gameTable)) {
                 System.out.println("Ничья");
                 break;
             }
@@ -64,7 +64,7 @@ public class Game {
                 System.out.println("Машины победили!");
                 break;
             }
-            if (drowVerifier.isDrow(gameTable)) {
+            if (cellVerifier.CellsFilled(gameTable)) {
                 System.out.println("Ничья");
                 break;
             }

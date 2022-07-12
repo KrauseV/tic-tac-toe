@@ -22,7 +22,7 @@ public class Launcher {
                 new ComputerMove(),
                 new PlayerMove(),
                 new WinnerVerifier(),
-                new DrowVerifier()
+                new CellVerifier()
         );
         game.play();
     }

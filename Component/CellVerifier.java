@@ -19,8 +19,8 @@ package Component;
 import Model.Cell;
 import Model.GameTable;
 
-public class DrowVerifier {
-    public boolean isDrow(GameTable gameTable) {
+public class CellVerifier {
+    public boolean CellsFilled(GameTable gameTable) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (gameTable.isEmpty(new Cell(i, j))) return false;
