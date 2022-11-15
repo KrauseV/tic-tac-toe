@@ -28,16 +28,12 @@ public class TerminalKeypadCellNumberConvert implements CellNumberConvert {
 
     @Override
     public Cell getCell(char step) {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (step == mapping1[i][j]) return new Cell(i, j);
-            }
-        }
-        return null;
+        int val = step - '0' - 1;
+        return new Cell(val / 3, val % 3);
     }
 
     @Override
     public char getNumber(Cell cell) {
-        return mapping1[cell.getRow()][cell.getCol()];
+        return (char) ('0' + cell.getRow() * 3 + cell.getCol() + 1);
     }
 }

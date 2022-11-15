@@ -15,11 +15,11 @@
  */
 
 import Component.*;
-import Component.keypad.DescktopKeypadCellNumberConvert;
+import Component.keypad.TerminalKeypadCellNumberConvert;
 
 public class Launcher {
     public static void main(String[] args) {
-        final CellNumberConvert cellNumberConvert = new DescktopKeypadCellNumberConvert();
+        final CellNumberConvert cellNumberConvert = new TerminalKeypadCellNumberConvert();
         Game game = new Game(new DataPrinter(cellNumberConvert),
                 new ComputerMove(),
                 new PlayerMove(cellNumberConvert),
