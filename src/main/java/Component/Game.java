@@ -40,7 +40,8 @@ public class Game {
     }
 
     public void play() {
-        System.out.println("Введите число от 1 до 9, число соответствует ячейке");
+
+        System.out.println("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ РѕС‚ 1 РґРѕ 9, С‡РёСЃР»Рѕ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓРµС‚ СЏС‡РµР№РєРµ");
         dataprinter.printTableMapping();
         final GameTable gameTable = new GameTable();
         if (new Random().nextBoolean()) {
@@ -51,24 +52,24 @@ public class Game {
             playerMove.make(gameTable);
             dataprinter.printTableGame(gameTable);
             if (winnerVerifier.isUserWin(gameTable)) {
-                System.out.println("Вы победили!");
+                System.out.println("Р’С‹ РїРѕР±РµРґРёР»Рё!");
                 break;
             }
             if (cellVerifier.CellsFilled(gameTable)) {
-                System.out.println("Ничья");
+                System.out.println("РќРёС‡СЊСЏ");
                 break;
             }
             computerMove.make(gameTable);
             dataprinter.printTableGame(gameTable);
             if (winnerVerifier.isComputerWin(gameTable)) {
-                System.out.println("Машины победили!");
+                System.out.println("РњР°С€РёРЅС‹ РїРѕР±РµРґРёР»Рё!");
                 break;
             }
             if (cellVerifier.CellsFilled(gameTable)) {
-                System.out.println("Ничья");
+                System.out.println("РќРёС‡СЊСЏ");
                 break;
             }
         }
-        System.out.println("Игра Завершена!");
+        System.out.println("РРіСЂР° Р—Р°РІРµСЂС€РµРЅР°!");
     }
 }
