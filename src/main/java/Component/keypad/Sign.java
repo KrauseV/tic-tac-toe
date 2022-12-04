@@ -14,29 +14,31 @@
  *    limitations under the License.
  */
 
-package Component;
+package Component.keypad;
 
-import Model.Cell;
-import Model.GameTable;
+public enum Sign {
+    X,
+    O,
+    EMPTY;
 
-import java.util.Random;
+    private Sign() {
+    }
 
-import static Component.keypad.Sign.O;
+    public char getEmpty() {
+        return ' ';
+    }
 
-public class ComputerMove {
-    public void make(GameTable gameTable) {
-        System.out.println("Ход компьютера");
-        Random random = new Random();
-        while (true) {
-            final int col = random.nextInt(3);
-            final int row = random.nextInt(3);
-            final Cell randomCell = new Cell(row, col);
-            if (gameTable.isEmpty(randomCell)) {
-                gameTable.setSign(randomCell, O);
+    public char getX() {
+        return 'X';
+    }
 
-                break;
-            }
-        }
+    public char getO() {
+        return 'O';
+    }
 
+    @Override
+    public String toString() {
+        if (this == EMPTY) return " ";
+        else return name();
     }
 }

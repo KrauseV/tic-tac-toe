@@ -21,6 +21,8 @@ import Model.GameTable;
 
 import java.util.Scanner;
 
+import static Component.keypad.Sign.X;
+
 public class PlayerMove {
   CellNumberConvert cellNumberConvert;
 
@@ -33,7 +35,7 @@ public class PlayerMove {
         while (true) {
             final Cell cell = getUserinput();
             if (gameTable.isEmpty(cell)) {
-                gameTable.setSign(cell, 'X');
+                gameTable.setSign(cell, X);
                 return;
             } else {
                 System.out.println("Ячейка занята");
@@ -42,6 +44,7 @@ public class PlayerMove {
     }
 
     private Cell getUserinput() {
+        System.out.println("Ваш ход");
         String step = new Scanner(System.in).nextLine();
         while (true) {
             if (step.length() == 1) {
@@ -54,5 +57,8 @@ public class PlayerMove {
 
     }
 
+    public static void main(String[] args) {
+        System.out.println(X.toString().charAt(0));
+    }
 
 }

@@ -16,19 +16,23 @@
 
 package Component;
 
+import Component.keypad.Sign;
 import Model.Cell;
 import Model.GameTable;
 
+import static Component.keypad.Sign.O;
+import static Component.keypad.Sign.X;
+
 public class WinnerVerifier {
     public boolean isComputerWin(GameTable gameTable) {
-        return winner('O', gameTable);
+        return winner(O, gameTable);
     }
 
     public boolean isUserWin(GameTable gameTable) {
-        return winner('X', gameTable);
+        return winner(X, gameTable);
     }
 
-    private boolean winner(char x, GameTable gameTable) {
+    private boolean winner(Sign x, GameTable gameTable) {
 
         for (int i = 0; i < 3; i++) {
             if (x == gameTable.getSign(new Cell(0, i)) &&
